@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define N 5
+int queue[N];
+int front=-1;
+int rear=-1;
+
+void enqueue(int x)
+{
+    if(front==-1&&rear==-1)
+    {
+        front=rear=0;
+        queue[rear]=x;
+    }
+    else if((rear+1)%N==front)
+    {
+        printf("Queue is Full\n");
+    }
+    else
+    {
+        rear=(rear+1)%N;
+        queue[rear]=x;
+    }
+
+}
+
+void dequeue()
+{
+    if(front==-1&&rear==-1)
+    {
+        printf("Queue is Empty\n");
+    }
+    else if(front==rear)
+    {
+       printf("\nThe dequeued element is: %d",queue[front]);
+        front=rear=-1;
+    }
+    else
+    {
+        printf("\nThe dequeued element is: %d",queue[front]);
+        front=(front+1)%N;
+    }
+}
+void display()
+{
+    int i=front;
+    if(front==-1&&rear==-1)
+    {
+        printf("Queue is Empty\n");
+    }
+    else
+    {
+        printf("\nQueue is : \n");
+        while(i!=rear)
+        {
+            printf("%d\n",queue[i]);
+            i=(i+1)%N;
+        }
+        printf("%d",queue[rear]);
+    }
+}
+
+void peek()
+{
+    printf("\nThe peek element is: %d",queue[front]);
+}
+
+int main()
+{
+    enqueue(10);
+    enqueue(12);
+    enqueue(14);
+    display();
+    peek();
+    dequeue();
+    display();
+    return 0;
+}

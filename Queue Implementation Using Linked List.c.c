@@ -1,4 +1,4 @@
-//Program implementation of queue operations//
+//2.IMPLEMENTATION OF QUEUE USING LINKED LIST//
 
 #include<stdio.h>
 #include<stdlib.h>

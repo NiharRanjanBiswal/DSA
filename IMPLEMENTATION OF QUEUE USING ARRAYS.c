@@ -1,3 +1,4 @@
+//IMPLEMENTATION OF QUEUE USING ARRAYS//
 #include<stdio.h>
 #include<stdlib.h>
 using namespace std;

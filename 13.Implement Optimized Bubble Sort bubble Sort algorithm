@@ -1,0 +1,41 @@
+//C program to Implement Optimized Bubble Sort bubble Sort algorithm//
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+void bubblesort(int arr[],int n)
+{
+    int i,j,temp,flag;
+    for(i=0;i<n-1-i;i++)
+    {
+        flag=0;
+        for(j=0;j<n-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                flag=1;
+            }
+        }
+        if(flag==0)
+        break;
+    }
+}
+void displayarr(int arr[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    printf("%d\t",arr[i]);
+}
+int main()
+{
+    int arr[]={10,5,7,9,22};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("Elements before Sorting \n");
+    displayarr(arr,n);
+    bubblesort(arr,n);
+    printf("\nElements after Sorting\n");
+    displayarr(arr,n);
+} 
